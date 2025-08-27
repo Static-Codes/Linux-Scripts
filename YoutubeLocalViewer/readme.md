@@ -18,4 +18,10 @@ There are definitely better solutions, however this works for my personal needs.
 10. Paste the video URL from Step 8 and click `Start/Stop`
 11. Your video will be downloaded to your linux machine under the filename `playback.mp4` then will automatically play.
 12. Click Start/Stop to cancel or go to `http://<YourLinuxMachineIP>:5000/cancel`
-13. Repeat Steps 10-13 until you decide it's time to do something other than watch Youtube :)
+13. If any issues arise restart the server by visiting `http://<YourLinuxMachineIP>:5000/restart` and waiting 10 seconds.
+14. Repeat Steps 10-13 until you decide it's time to do something other than watch Youtube :)
+
+## Minimum specs:
+- 4GB DDR3 RAM
+- 2 Core CPU with AVX2 support (this is almost any CPU made in the last 15 years)
+- 35GB of storage.
