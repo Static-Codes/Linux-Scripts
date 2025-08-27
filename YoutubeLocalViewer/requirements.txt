@@ -1,0 +1,4 @@
+aiohttp==3.12.15
+Flask==3.1.2
+psutil==7.0.0
+yt_dlp==2025.8.22
