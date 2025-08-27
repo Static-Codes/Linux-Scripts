@@ -22,6 +22,6 @@ There are definitely better solutions, however this works for my personal needs.
 14. Repeat Steps 10-13 until you decide it's time to do something other than watch Youtube :)
 
 ## Minimum specs:
-- 4GB DDR3 RAM
+- 2GB DDR3 RAM
 - 2 Core CPU with AVX2 support (this is almost any CPU made in the last 15 years)
 - 35GB of storage.
