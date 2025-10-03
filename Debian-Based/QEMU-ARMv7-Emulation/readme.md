@@ -9,10 +9,10 @@ Even with enterprise grade hardware, your experience will be subpar when compare
 
 If you run into any issues, please run `sh ./unmt.sh`
 
-## 1. `Run sh ./download.sh`
+1. Run `sh ./download.sh`
 
-## 2. `Run sh ./extract.sh`
+2. Run `sh ./extract.sh`
 
-## 3. `Run sh ./install.sh`
+3. Run `sh ./install.sh`
 
-## 4. `Run sh ./run-text.sh`
+4. Run `sh ./run-text.sh`
