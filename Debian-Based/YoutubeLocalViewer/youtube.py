@@ -1,7 +1,7 @@
 requirements = """
 # python3 -m venv venv
 # source venv/bin/activate
-# pip install yt-dlp
+# pip3 install -r requirements.txt
 # sudo apt-get install ffmpeg xdotool
 # """
 
@@ -9,12 +9,13 @@ requirements = """
 
 from ctypes import pythonapi
 from os import getcwd, path, remove, system
+from random import randint
 from subprocess import PIPE, Popen
 from threading import Thread
 from time import sleep
 from yt_dlp import YoutubeDL
 
-FILE_LOC = path.join(getcwd(), "playback.mp4")
+FILE_LOC = path.join(getcwd(), "playback.mp4", str(randint(1000, 100000)))
 
 class Youtube:
     def __init__(self, video_url: str = None, quality = '1080', format='mp4:m4a', byte_limit=13110000, previous_url: str = None):
