@@ -1,16 +1,18 @@
 #!/bin/bash
 
 # Please enter the server IP for the target machine you wish to migrate the VMs to.
-TARGET_IP=""
+TARGET_IP="$1"
 
-if [ -z $TARGET_IP ]; then;
-    echo "Please specify TARGET_IP in migrate.sh on line 4"
-    return 1
+if [ -z $TARGET_IP ]; then
+    echo "Invalid usage."
+    echo "Expected usage:"
+    echo "./migrate.sh <TARGET_IP>"
+    exit 1
 fi
 
 echo "This script requires sudo privileges."
 echo "Please enter your password: "
-sudo -v || { echo "Sudo elevation failed"; return 1; }
+sudo -v || { echo "Sudo elevation failed"; exit 1; }
 
 DIR=$(dirname $0)
 

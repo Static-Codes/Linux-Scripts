@@ -83,7 +83,25 @@ migrate_vm() {
     sudo virsh dumpxml "$VM_NAME" > "$XML_MIGRATION_PATH" || { echo "Failed to dump $XML_MIGRATION_PATH, please try again"; return 1; }
     echo "Dumped $XML_FILENAME to $MIGRATION_DIR, continuing.."
     
-    VM_STORAGE_FILE="$LIBVIRT_IMAGE_DIR/$VM_NAME.qcow2"
+    STORAGE_FILENAME=$VM_NAME
+    VM_STORAGE_FILE="$LIBVIRT_IMAGE_DIR/$STORAGE_FILENAME.qcow2"
+
+    if [ ! -e "$VM_STORAGE_FILE" ]; then
+        echo "Unable to locate storage file at: '$VM_STORAGE_FILE'";
+        echo "You will be prompted for the path to storage file associated with the VM '$VM_NAME'"
+        echo "Note: This file is almost certainly located in '$LIBVIRT_IMAGE_DIR'"
+        read -p "Path to storage file: " STORAGE_FILENAME
+
+        if [ ! -e "$STORAGE_FILENAME" ]; then
+            echo "Failed to locate a file at the path specified, please check your input and try again."
+            return 1;
+        fi
+
+        VM_STORAGE_FILE=$STORAGE_FILENAME
+    fi
+
+
+
     DESTINATION_DIR="$NETWORK_PATH:$LIBVIRT_IMAGE_DIR"
 
     echo "Ensuring rsync is installed on the target machine '$NETWORK_PATH'"
